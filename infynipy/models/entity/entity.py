@@ -8,7 +8,7 @@ from .expense import Expense
 from .liability import Liability
 from .asset import Asset
 
-from ..mixin import BaseMixin
+from .mixin import BaseMixin
 
 
 class ClientAccountEntity(InfynipyBase, BaseMixin):
