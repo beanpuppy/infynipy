@@ -4,7 +4,6 @@ r"""The InfynipyBase superclass"""
 class InfynipyBase:
 
     ENDPOINT = 'https://api.infynity.com.au/v1/'
-    # ENDPOINT = 'http://127.0.0.1:5000/v1/'
 
     def _get(self, endpoint):
         # On creates we want to get the resource again because the user may
@@ -35,12 +34,3 @@ class InfynipyBase:
 
         if _data:
             self.from_dict(_data)
-
-    @property
-    def identifer(self):
-        return self._name + '_id'
-
-    @property
-    def identifer_value(self):
-        identifier = self.identifer
-        return getattr(self, identifier)

@@ -11,6 +11,7 @@ Infynipy currently supports the following endpoints:
 
 * Client Accounts
 * Financials
+* Referrer and Referrer Groups
 
 # Getting Started
 

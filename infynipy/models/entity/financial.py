@@ -4,8 +4,10 @@ Base Model for Client Account entitiy financials.
 from infynipy.models.base import InfynipyBase
 from infynipy.exceptions import ClientException
 
+from ..mixin import BaseMixin
 
-class EntityFinancial(InfynipyBase):
+
+class EntityFinancial(InfynipyBase, BaseMixin):
 
     def __init__(self, infynity, name, entity_type, entity_id, data=None):
         super().__init__(infynity, _data=data)

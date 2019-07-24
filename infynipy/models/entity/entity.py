@@ -8,8 +8,10 @@ from .expense import Expense
 from .liability import Liability
 from .asset import Asset
 
+from ..mixin import BaseMixin
 
-class ClientAccountEntity(InfynipyBase):
+
+class ClientAccountEntity(InfynipyBase, BaseMixin):
 
     def __init__(self, infynity, name, broker_id, data=None):
         super().__init__(infynity, _data=data)
@@ -38,25 +40,36 @@ class ClientAccountEntity(InfynipyBase):
         endpoint = InfynipyBase.ENDPOINT + f'{self._name}/{self.broker_id}/{account_id}'
         response = self._infynity.post(endpoint, self.to_dict())
 
-        self._get(response[self.identifer])
+        self._get(
+            InfynipyBase.ENDPOINT + f'{self.name}/{self.broker_id}/{response[self.identifer]}'
+        )
 
         return response['account_id']
 
     def update(self):
-        """Create an existing entity"""
-        if self.data is None:
-            raise ClientException(f'{self._name} has no fields')
+        """Update an existing entity"""
+        identifer = self.identifer
+        if not hasattr(self, identifer):
+            raise ClientException('model has no identifer.')
 
         endpoint = InfynipyBase.ENDPOINT + f'{self._name}/{self.broker_id}/{self.identifier_value}'
         self._infynity.put(endpoint, self.to_dict())
 
     def delete_all(self):
         """Delete entity in all client accounts"""
+        identifer = self.identifer
+        if not hasattr(self, identifer):
+            raise ClientException('model has no identifer.')
+
         endpoint = InfynipyBase.ENDPOINT + f'{self._name}/{self.identifier_value}'
         self._infynity.delete(endpoint)
 
     def delete_account(self, account_id):
         """Delete entity in single client account"""
+        identifer = self.identifer
+        if not hasattr(self, identifer):
+            raise ClientException('model has no identifer.')
+
         endpoint = InfynipyBase.ENDPOINT + f'{self._name}/{self.identifier_value}/{account_id}'
         self._infynity.delete(endpoint)
 

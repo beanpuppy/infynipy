@@ -1,6 +1,7 @@
 import json
 import requests
 
+from .models.base import InfynipyBase
 from .exceptions import APIException
 from .util import JSONEncoder
 from . import models
@@ -61,3 +62,27 @@ class Infynity:
 
     def broker(self, broker_id):
         return models.Broker(self, broker_id)
+
+    @property
+    def referrers(self):
+        endpoint = InfynipyBase.ENDPOINT + 'referrer'
+        return [models.Referrer(self, d) for d in self.get(endpoint)]
+
+    def referrer(self, *, referrer_id=None, data=None):
+        if referrer_id is not None:
+            endpoint = InfynipyBase.ENDPOINT + f'referrer/{referrer_id}'
+            data = self.get(endpoint)
+
+        return models.Referrer(self, data)
+
+    @property
+    def referrer_groups(self):
+        endpoint = InfynipyBase.ENDPOINT + 'referrergroup'
+        return [models.ReferrerGroup(self, d) for d in self.get(endpoint)]
+
+    def referrer_group(self, *, group_id=None, data=None):
+        if group_id is not None:
+            endpoint = InfynipyBase.ENDPOINT + f'referrergroup/{group_id}'
+            data = self.get(endpoint)
+
+        return models.ReferrerGroup(self, data)

@@ -17,7 +17,7 @@ class Address(InfynipyBase):
     def update(self):
         """Update an existing address"""
         if not hasattr(self, 'address_id'):
-            raise ClientException('No address_id.')
+            raise ClientException('model has no address_id')
 
         endpoint = InfynipyBase.ENDPOINT + f'addresss/{self.address_id}'
         self._infynity.put(endpoint, self.to_dict())
@@ -25,7 +25,7 @@ class Address(InfynipyBase):
     def delete(self):
         """Delete an existing address"""
         if not hasattr(self, 'address_id'):
-            raise ClientException('No address_id.')
+            raise ClientException('model has no address_id.')
 
         endpoint = InfynipyBase.ENDPOINT + f'addresss/{self.address_id}'
         self._infynity.delete(endpoint)
