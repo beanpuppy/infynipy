@@ -7,6 +7,11 @@ An API wrapper for the [Infynity][] mortgage broker system.
 
 [Infynity]: https://api.infynity.com.au/v1/doc#!index.md
 
+Infynipy currently supports the following endpoints:
+
+* Client Accounts
+* Financials
+
 # Getting Started
 
 Install using pip:
