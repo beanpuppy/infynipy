@@ -26,11 +26,15 @@ Basic usage:
 ```python
 from infynipy import Infynity
 
+broker_id = 1337
+# Authenticate with Infynity:
 client = Infynity("USERNAME", "API_KEY")
-print(client.broker(10).individuals)  # Returns an array of Individual models
 
-# To turn them into dictionaries
-for individual in client.broker(10).individuals:
+# Get array of individual model classes:
+individuals = client.broker(broker_id).individuals
+
+# To turn them into dictionaries:
+for individual in individuals:
     print(individual.to_dict())
 ```
 
