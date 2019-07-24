@@ -29,53 +29,49 @@ To create an Infynity instance you need two pieces of information:
 You will need to provide these by passing them in as two arguments when calling the initializer
 of the :class:`Infynity` class: ``username``, ``api_key``. For example:
 
-``` code-block:: python
-from infynipy import Infynity
+.. code-block:: python
+   from infynipy import Infynity
 
-client = Infynity("USERNAME", "API_KEY")
-```
+   client = Infynity("USERNAME", "API_KEY")
 
 Get all individuals under a broker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``` code-block:: python
-# assume you have a Infynity instance bound to variable `client`
+.. code-block:: python
+   # assume you have a Infynity instance bound to variable `client`
 
-broker_id = 3999
+   broker_id = 3999
 
-for individual in client.broker(broker_id).individuals:
-   print(individual)  # Print the individual model class
-   print(individual.to_dict())  # Convert the individual model class into a dictionary
-```
+   for individual in client.broker(broker_id).individuals:
+         print(individual)  # Print the individual model class
+         print(individual.to_dict())  # Convert the individual model class into a dictionary
 
 Get an individual's incomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``` code-block:: python
-# assume you have a Infynity instance bound to variable `client`
+.. code-block:: python
+   # assume you have a Infynity instance bound to variable `client`
 
-broker_id = 3999  # Broker ID of who owns the individual
-individual_id = 'x1EvOBG3vZgbrjwd'
+   broker_id = 3999  # Broker ID of who owns the individual
+   individual_id = 'x1EvOBG3vZgbrjwd'
 
-incomes = client.broker(broker_id).individual(individual_id).incomes
+   incomes = client.broker(broker_id).individual(individual_id).incomes
 
-for income in incomes:
-   print(income)
-```
+   for income in incomes:
+         print(income)
 
 Update an individual
 ~~~~~~~~~~~~~~~~~~~~
 
-``` code-block:: python
-# assume you have a Infynity instance bound to variable `client`
+.. code-block:: python
+   # assume you have a Infynity instance bound to variable `client`
 
-broker_id = 3999  # Broker ID of who owns the individual
-individual_id = 'x1EvOBG3vZgbrjwd'
+   broker_id = 3999  # Broker ID of who owns the individual
+   individual_id = 'x1EvOBG3vZgbrjwd'
 
-# Get the individual
-individual = client.broker(broker_id).individual(individual_id)
+   # Get the individual
+   individual = client.broker(broker_id).individual(individual_id)
 
-# Change first name
-individual.first_name = 'James'
-individual.update()  # Send the updates
-```
+   # Change first name
+   individual.first_name = 'James'
+   individual.update()  # Send the updates
