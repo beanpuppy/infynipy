@@ -30,6 +30,7 @@ You will need to provide these by passing them in as two arguments when calling 
 of the :class:`Infynity` class: ``username``, ``api_key``. For example:
 
 .. code-block:: python
+
    from infynipy import Infynity
 
    client = Infynity("USERNAME", "API_KEY")
@@ -38,6 +39,7 @@ Get all individuals under a broker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
+
    # assume you have a Infynity instance bound to variable `client`
 
    broker_id = 3999
@@ -50,6 +52,7 @@ Get an individual's incomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
+
    # assume you have a Infynity instance bound to variable `client`
 
    broker_id = 3999  # Broker ID of who owns the individual
@@ -64,6 +67,7 @@ Update an individual
 ~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
+
    # assume you have a Infynity instance bound to variable `client`
 
    broker_id = 3999  # Broker ID of who owns the individual
