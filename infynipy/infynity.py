@@ -1,7 +1,7 @@
 import json
 import requests
 
-from .execeptions import APIException
+from .exceptions import APIException
 from .util import JSONEncoder
 from . import models
 

@@ -5,7 +5,7 @@ from .company import Company
 from .trust import Trust
 
 from ..util import get_type
-from ..execeptions import ClientException
+from ..exceptions import ClientException
 
 
 class Broker(InfynipyBase):

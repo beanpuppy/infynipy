@@ -7,7 +7,7 @@ from .entity.entity import ClientAccountEntity
 from .entity.address import Address
 from .entity.employment import Employment
 from .entity.income import Income
-from ..execeptions import ClientException
+from ..exceptions import ClientException
 
 
 class Individual(ClientAccountEntity):

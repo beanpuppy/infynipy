@@ -2,7 +2,7 @@ r"""
 Base Model for Client Account entitiy financials.
 """
 from infynipy.models.base import InfynipyBase
-from infynipy.execeptions import ClientException
+from infynipy.exceptions import ClientException
 
 
 class EntityFinancial(InfynipyBase):

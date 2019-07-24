@@ -3,7 +3,7 @@ The Employment model.
 Documentation: https://api.infynity.com.au/v1/doc#!reference/employment.md
 """
 from infynipy.models.base import InfynipyBase
-from infynipy.execeptions import ClientException
+from infynipy.exceptions import ClientException
 
 
 class Employment(InfynipyBase):

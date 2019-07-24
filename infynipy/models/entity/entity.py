@@ -2,7 +2,7 @@ r"""
 Base Model for Client Account entities.
 """
 from infynipy.models.base import InfynipyBase
-from infynipy.execeptions import ClientException
+from infynipy.exceptions import ClientException
 
 from .expense import Expense
 from .liability import Liability

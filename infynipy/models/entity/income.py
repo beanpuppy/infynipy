@@ -3,7 +3,7 @@ Model for Client Account entity incomes.
 Documentation: https://api.infynity.com.au/v1/doc#!reference/income.md
 """
 from infynipy.models.base import InfynipyBase
-from infynipy.execeptions import ClientException
+from infynipy.exceptions import ClientException
 
 from .financial import EntityFinancial
 

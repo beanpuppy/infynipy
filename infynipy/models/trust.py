@@ -5,7 +5,7 @@ Documentation: https://api.infynity.com.au/v1/doc#!reference/trust.md
 from .base import InfynipyBase
 from .entity.entity import ClientAccountEntity
 from .entity.address import Address
-from ..execeptions import ClientException
+from ..exceptions import ClientException
 
 
 class Trust(ClientAccountEntity):
