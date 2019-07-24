@@ -13,8 +13,10 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-from infynipy import __version__
+import sys
+sys.path.insert(0, "..")
 
+from infynipy import __version__
 
 # -- Project information -----------------------------------------------------
 
