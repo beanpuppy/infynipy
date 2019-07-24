@@ -30,7 +30,7 @@ for individual in client.broker(10).individuals:
 
 View the rest of the [documentation here.][]
 
-[documentation here]: https://infynipy.readthedocs.io
+[documentation here.]: https://infynipy.readthedocs.io
 
 ## Development
 

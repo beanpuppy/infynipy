@@ -13,6 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+from infynipy import __version__
 
 
 # -- Project information -----------------------------------------------------
@@ -22,8 +23,10 @@ copyright = '2019, Justin Duch'
 author = 'Justin Duch'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.0'
+release = __version__
+version = ".".join(__version__.split(".", 2)[:2])
 
+master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
 
@@ -40,7 +43,6 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
 
 # -- Options for HTML output -------------------------------------------------
 
