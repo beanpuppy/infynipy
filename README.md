@@ -1,5 +1,8 @@
 # Infynipy
 
+[![PyPI](https://img.shields.io/pypi/v/infynipy.svg)](https://pypi.org/project/infynipy/)
+[![Documentation Status](https://readthedocs.org/projects/infynipy/badge/?version=latest)](https://infynipy.readthedocs.io/en/latest/?badge=latest)
+
 An API wrapper for the [Infynity][] mortgage broker system.
 
 [Infynity]: https://api.infynity.com.au/v1/doc#!index.md
@@ -22,8 +25,12 @@ print(client.broker(10).individuals)  # Returns an array of Individual models
 
 # To turn them into dictionaries
 for individual in client.broker(10).individuals:
-  print(individual.to_dict())
+    print(individual.to_dict())
 ```
+
+View the rest of the [documentation here.][]
+
+[documentation here]: https://infynipy.readthedocs.io
 
 ## Development
 
